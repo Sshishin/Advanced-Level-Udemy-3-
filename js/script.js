@@ -185,3 +185,41 @@ inputRub.addEventListener('input', () => {
 // const isJoffreyDead = dead.includes('Джофри')
 // console.log(isJoffreyDead)
 // // true
+
+
+
+
+// **************************** Коллекция Set - для хранения данных любого типа, но хранит только уникальные значения 
+// Создается через конструктор
+// Получить напрямую элемент из коллекции нельзя, но можно получить в "обход" использую например forEach()
+// Объекты если и выглядят одинаково не удут равны друг другу так как храняться по ссылке
+
+// const uniqueIds = new Set()
+
+// uniqueIds.add(123)
+// uniqueIds.add(456)
+// uniqueIds.add(111)
+// uniqueIds.add(123)
+
+// console.log(uniqueIds.size)
+// // 3
+
+// console.log(uniqueIds.has(111))
+// // true
+
+// uniqueIds.delete(111)
+// console.log(uniqueIds.size)
+// // 2
+
+// uniqueIds.clear()
+// console.log(uniqueIds.size)
+// // 0
+
+
+// Легкий способ преобразования уникального массива из неуникального 
+
+// const nonUnique = [1, 2, 3, 4, 5, 4, 5, 1, 1]
+// const uniqueValuesArr = [...new Set(nonUnique)]
+
+// console.log(uniqueValuesArr)
+// // [1, 2, 3, 4, 5]
