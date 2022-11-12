@@ -432,3 +432,75 @@ console.log(arr3);
 // fetch('https://jsonplaceholder.typicode.com/todos/1')   //Используем метод fetch который возвращает промис
 //   .then(response => response.json())    //Используем для преобразование из Json в объект внутренний метод для fetch json который тоже возвращает промис
 //   .then(json => console.log(json));     
+
+
+
+
+
+// *************** Практика работы с массивами
+
+
+
+const films = [
+    {
+        name: 'Titanic',
+        rating: 9
+    },
+    {
+        name: 'Die hard 5',
+        rating: 5
+    },
+    {
+        name: 'Matrix',
+        rating: 8
+    },
+    {
+        name: 'Some bad film',
+        rating: 4
+    }
+];
+
+
+function showGoodFilms(arr) {
+    const rateOfObj = arr.filter(item => {
+        if(item.rating >= 8) {
+            return item;
+        }
+    });
+    return rateOfObj;
+
+}
+console.log(showGoodFilms(films));
+
+
+
+function showListOfFilms(arr) {
+    return arr.reduce((acc, curr) =>`${typeof(acc) === 'object' ? acc.name : acc}, ${curr.name}`);  
+}   //Была ошибка так как не польовался костылек через удаление объекта
+
+// function showListOfFilms(arr) {
+//     return arr.map(item => item.name).reduce((sum, current) => `${sum}, ${current}`);
+// }
+// console.log(showListOfFilms(films));
+
+function setFilmsIds(arr) {
+    return arr.map((item, i) => {   //Была ошибка так как пытался вернуть именно item.id и не получал объект
+        item.id = i;    //Здесь создаем ключ значение
+        return item;    //А здесь возвращаем целый объект
+    });
+}
+
+console.log(setFilmsIds(films));
+
+const tranformedArray = setFilmsIds(films);
+
+function checkFilms(arr) {
+    return arr.every(item => {
+        if(item.id || item.id === 0) {      //Была ошибка так как снова решил что это костыль
+            return item;
+        }
+    });
+}
+
+console.log(checkFilms(tranformedArray));
+
