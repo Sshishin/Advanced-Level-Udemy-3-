@@ -112,13 +112,13 @@ inputRub.addEventListener('input', () => {
 // Some вернет тру если хоть какой-то элемент соответствует услвоиям
 // Every вернет true если все элементы соответствуют условию
 
-const arr = [1, 'John', 3, 4, 5];
+// const arr = [1, 'John', 3, 4, 5];
 
-const arr2 = arr.some(item => typeof(item) === 'number');
-const arr3 = arr.every(item => typeof(item) === 'number');
+// const arr2 = arr.some(item => typeof(item) === 'number');
+// const arr3 = arr.every(item => typeof(item) === 'number');
 
-console.log(arr2);
-console.log(arr3);
+// console.log(arr2);
+// console.log(arr3);
 
 
 
@@ -441,66 +441,96 @@ console.log(arr3);
 
 
 
-const films = [
-    {
-        name: 'Titanic',
-        rating: 9
-    },
-    {
-        name: 'Die hard 5',
-        rating: 5
-    },
-    {
-        name: 'Matrix',
-        rating: 8
-    },
-    {
-        name: 'Some bad film',
-        rating: 4
-    }
-];
+// const films = [
+//     {
+//         name: 'Titanic',
+//         rating: 9
+//     },
+//     {
+//         name: 'Die hard 5',
+//         rating: 5
+//     },
+//     {
+//         name: 'Matrix',
+//         rating: 8
+//     },
+//     {
+//         name: 'Some bad film',
+//         rating: 4
+//     }
+// ];
 
 
-function showGoodFilms(arr) {
-    const rateOfObj = arr.filter(item => {
-        if(item.rating >= 8) {
-            return item;
-        }
-    });
-    return rateOfObj;
+// function showGoodFilms(arr) {
+//     const rateOfObj = arr.filter(item => {
+//         if(item.rating >= 8) {
+//             return item;
+//         }
+//     });
+//     return rateOfObj;
 
-}
-console.log(showGoodFilms(films));
+// }
+// console.log(showGoodFilms(films));
 
 
-
-function showListOfFilms(arr) {
-    return arr.reduce((acc, curr) =>`${typeof(acc) === 'object' ? acc.name : acc}, ${curr.name}`);  
-}   //Была ошибка так как не польовался костылек через удаление объекта
 
 // function showListOfFilms(arr) {
-//     return arr.map(item => item.name).reduce((sum, current) => `${sum}, ${current}`);
+//     return arr.reduce((acc, curr) =>`${typeof(acc) === 'object' ? acc.name : acc}, ${curr.name}`);  
+// }   //Была ошибка так как не польовался костылек через удаление объекта
+
+// // function showListOfFilms(arr) {
+// //     return arr.map(item => item.name).reduce((sum, current) => `${sum}, ${current}`);
+// // }
+// // console.log(showListOfFilms(films));
+
+// function setFilmsIds(arr) {
+//     return arr.map((item, i) => {   //Была ошибка так как пытался вернуть именно item.id и не получал объект
+//         item.id = i;    //Здесь создаем ключ значение
+//         return item;    //А здесь возвращаем целый объект
+//     });
 // }
-// console.log(showListOfFilms(films));
 
-function setFilmsIds(arr) {
-    return arr.map((item, i) => {   //Была ошибка так как пытался вернуть именно item.id и не получал объект
-        item.id = i;    //Здесь создаем ключ значение
-        return item;    //А здесь возвращаем целый объект
-    });
-}
+// console.log(setFilmsIds(films));
 
-console.log(setFilmsIds(films));
+// const tranformedArray = setFilmsIds(films);
 
-const tranformedArray = setFilmsIds(films);
+// function checkFilms(arr) {
+//     return arr.every(item => {
+//         if(item.id || item.id === 0) {      //Была ошибка так как снова решил что это костыль
+//             return item;
+//         }
+//     });
+// }
 
-function checkFilms(arr) {
-    return arr.every(item => {
-        if(item.id || item.id === 0) {      //Была ошибка так как снова решил что это костыль
+// console.log(checkFilms(tranformedArray));
+
+
+const funds = [
+    {amount: -1400},
+    {amount: 2400},
+    {amount: -1000},
+    {amount: 500},
+    {amount: 10400},
+    {amount: -11400}
+];
+
+const getPositiveIncomeAmount = (data) => {
+   return data.filter(item => item.amount > 0).reduce((sum, current) => typeof(sum) === 'object' ? sum.amount + current.amount : sum + current.amount);
+};
+
+console.log(getPositiveIncomeAmount(funds));
+
+const getTotalIncomeAmount = (data) => {
+    const result = data.some(item => {
+        if(item.amount < 0) {
             return item;
         }
     });
-}
+    if(result === true) {
+        return data.reduce((sum, current) => typeof(sum) === 'object' ? sum.amount + current.amount : sum + current.amount);
+    } else {
+        getPositiveIncomeAmount();
+    }
+};
 
-console.log(checkFilms(tranformedArray));
-
+console.log(getTotalIncomeAmount(funds));
