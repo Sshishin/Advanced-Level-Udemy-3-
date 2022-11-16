@@ -516,7 +516,7 @@ const funds = [
 
 const getPositiveIncomeAmount = (data) => {
    return data.filter(item => item.amount > 0).reduce((sum, current) => typeof(sum) === 'object' ? sum.amount + current.amount : sum + current.amount);
-};
+};  //При использовании reduce нужно явно указывать еще и значение else, так как при использовании if reduce всегда вовращает какое-либо значение;
 
 console.log(getPositiveIncomeAmount(funds));
 
@@ -534,3 +534,10 @@ const getTotalIncomeAmount = (data) => {
 };
 
 console.log(getTotalIncomeAmount(funds));
+
+
+
+
+// ********************* axios
+// Ббилиотека работы с запросами 
+// Многое автоматизировано и не нужно будет переписывать лишние строчки кода
