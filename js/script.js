@@ -505,35 +505,35 @@ inputRub.addEventListener('input', () => {
 // console.log(checkFilms(tranformedArray));
 
 
-const funds = [
-    {amount: -1400},
-    {amount: 2400},
-    {amount: -1000},
-    {amount: 500},
-    {amount: 10400},
-    {amount: -11400}
-];
+// const funds = [
+//     {amount: -1400},
+//     {amount: 2400},
+//     {amount: -1000},
+//     {amount: 500},
+//     {amount: 10400},
+//     {amount: -11400}
+// ];
 
-const getPositiveIncomeAmount = (data) => {
-   return data.filter(item => item.amount > 0).reduce((sum, current) => typeof(sum) === 'object' ? sum.amount + current.amount : sum + current.amount);
-};  //При использовании reduce нужно явно указывать еще и значение else, так как при использовании if reduce всегда вовращает какое-либо значение;
+// const getPositiveIncomeAmount = (data) => {
+//    return data.filter(item => item.amount > 0).reduce((sum, current) => typeof(sum) === 'object' ? sum.amount + current.amount : sum + current.amount);
+// };  //При использовании reduce нужно явно указывать еще и значение else, так как при использовании if reduce всегда вовращает какое-либо значение;
 
-console.log(getPositiveIncomeAmount(funds));
+// console.log(getPositiveIncomeAmount(funds));
 
-const getTotalIncomeAmount = (data) => {
-    const result = data.some(item => {
-        if(item.amount < 0) {
-            return item;
-        }
-    });
-    if(result === true) {
-        return data.reduce((sum, current) => typeof(sum) === 'object' ? sum.amount + current.amount : sum + current.amount);
-    } else {
-        getPositiveIncomeAmount();
-    }
-};
+// const getTotalIncomeAmount = (data) => {
+//     const result = data.some(item => {
+//         if(item.amount < 0) {
+//             return item;
+//         }
+//     });
+//     if(result === true) {
+//         return data.reduce((sum, current) => typeof(sum) === 'object' ? sum.amount + current.amount : sum + current.amount);
+//     } else {
+//         getPositiveIncomeAmount();
+//     }
+// };
 
-console.log(getTotalIncomeAmount(funds));
+// console.log(getTotalIncomeAmount(funds));
 
 
 
@@ -541,3 +541,89 @@ console.log(getTotalIncomeAmount(funds));
 // ********************* axios
 // Ббилиотека работы с запросами 
 // Многое автоматизировано и не нужно будет переписывать лишние строчки кода
+
+
+
+
+
+
+
+// ********************* RegExp (Регулярные выраженияы)
+
+
+// // Первый варинт создания
+// new RegExp('pattern', 'flags')   //Паттерн это то что мы ищем
+
+// // Второй и наиболее популярный вариант
+// /pattern/f
+
+// Метод search - достаточно простой и с g уже не работает
+
+// const ans = prompt('Введите текст');
+
+// const reg = /n/;
+
+
+// Flags
+// i - поиск вне зависимости от регистра
+// g - поиск сразу нескольки вхождений
+// m - многострочный режим
+
+// console.log(ans.search(reg));   //Получаем позицию заданного паттерна в строке либо если паттерна нет тогда получаем -1
+
+
+// const reg = /n/igm;
+// console.log(ans.match(reg));    //Уже работает со многими флагами
+
+
+// Метод replace с RegExp
+
+// const pass = prompt('Password, please');
+
+// console.log(pass.replace(/./g, '*'));       //Точка это значит все элементы    //Первым подставляем то что хотим заменить, второе на что именно
+// console.log(pass.replace(/\./g, '*'));      //А так с помощью обратного слэша мы говорим что это не спецсимввол а просто точка
+
+
+// console.log('12-34-56'.replace(/-/g, ':'));
+
+
+// Методы только регулярных выражений
+
+// const ans = prompt('Введите текст');
+
+// const reg = /n/gi;
+
+// console.log(reg.test(ans));
+
+
+// Поиск по типу символа
+
+// \d - поиск цифр
+// \w - ищем все буквы
+// \s - ищем все пробелы
+
+// const ans = prompt('Введите число');
+
+// const reg = /\d/g;
+
+// console.log(ans.match(reg));
+
+
+// Более сложные конструкции
+
+// const str = 'My name is R2D2';
+
+// console.log(str.match(/\w\d\w\d/i));
+
+// console.log(str.match(/r2d2/gi));
+
+
+// Обратные классе (НЕ что-то)
+
+// \D - не цифра
+// \W - не буква
+// \M - не пробел
+
+const str = 'My name is R2D2';
+
+console.log(str.match(/\D/gi));
