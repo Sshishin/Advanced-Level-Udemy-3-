@@ -624,6 +624,42 @@ inputRub.addEventListener('input', () => {
 // \W - не буква
 // \M - не пробел
 
-const str = 'My name is R2D2';
+// const str = 'My name is R2D2';
 
-console.log(str.match(/\D/gi));
+// console.log(str.match(/\D/gi));
+
+
+
+
+
+
+
+// ********************* Геттеры и Сеттеры
+
+// let user = {
+//     name: "John",
+//     surname: "Smith",
+  
+//     get fullName() {
+//       return `${this.name} ${this.surname}`;
+//     },
+  
+//     set fullName(value) {
+//       [this.name, this.surname] = value.split(" ");
+//     }
+//   };
+  
+//   // set fullName запустится с данным значением
+//   user.fullName = "Alice Cooper";
+  
+//   alert(user.name); // Alice
+//   alert(user.surname); // Cooper
+
+
+
+
+
+
+
+
+
