@@ -755,3 +755,33 @@ inputRub.addEventListener('input', () => {
 // ivan.age = 99;      //Меняем через сеттер, без него это свойство будет недоступно
 // console.log(ivan.age);
 // ivan.say();
+
+
+
+
+// ********************* Modules 
+// Позволяет сохранять чистоту в глобальной области видимости
+
+// const app = 123;
+
+// const number = 1;
+
+// (function(){    //Анонимная самовызывающаяся функция (IIFE)
+//     let number = 2;
+//     console.log(3);
+//     console.log(number + 3);
+// }());
+
+
+// const user = (function(){
+//     const privat = function() {     //Так мы создаем функцию которая не доступна снаружи
+//         console.log('I am privat');
+//     };
+
+//     return {  
+//         sayHello: privat    //Но с помощью возвращенного обхекта с методом который вызывает функцию мы можем выборочно давать доступ к элементам программы
+//     };
+// }());
+
+// user.sayHello();
+
