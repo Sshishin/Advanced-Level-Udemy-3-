@@ -660,6 +660,98 @@ inputRub.addEventListener('input', () => {
 
 
 
+// ********************* Инкапсуляция
+// Закрытый доступ к внутренностям архитектуры
+// То есть пользователи могут например изменить значения объекта
+// Безопасность
+
+// Пример без инкапсуляции
+
+// function User(name, age) {
+//     this.name = name;
+//     this.age = age;
+
+//     this.say = function() {
+//         console.log(`Имя пользователя: ${this.name}, возраст: ${this.age}`);
+//     };
+// }
+
+// const ivan = new User('Ivan', 27);
+
+// console.log(ivan.name);
+// console.log(ivan.age);
+
+// ivan.age = 30;
+// ivan.name = 'Alex';
+
+// ivan.say();
+
+
+// Пример инкапсуляции
+
+
+// function User(name, age) {
+//     this.name = name;
+//     let userAge = age;
+
+//     this.say = function() {
+//         console.log(`Имя пользователя: ${this.name}, возраст: ${userAge}`);
+//     };
+
+//     this.getAge = function() {
+//         return userAge;
+//     };
+
+//     this.setAge = function(age) {
+//         if(typeof age === 'number' && age > 0 && age < 110) {
+//             userAge = age;
+//         } else {
+//             console.log('Недопустимое значение');
+//         }
+//     };
+// }
+
+// const ivan = new User('Ivan', 27);
+
+// console.log(ivan.name);
+// console.log(ivan.getAge());
+
+// ivan.setAge(30);
+// console.log(ivan.getAge());
+
+// ivan.say();
 
 
 
+
+// class User{
+//     constructor (name, age) {
+//         this.name = name;
+//         this._age = age;    //Нижнее подчеркивание говорит о том что такое свойство должно быть скрыто для доступа из вне
+//     }
+    
+//    #surname = 'shishin'     //Приватное свойство которое влияет на код внутри конструктора но недоступно из вне
+
+//     say() {
+//         console.log(`Имя пользователя: ${this.name},${this.#surname}, возраст: ${this._age}`);
+//     }
+
+//     get age() {
+//         return this._age;
+//     }
+
+//     set age(age) {
+//         if(typeof age === 'number' && age > 0 && age < 110) {
+//             this._age = age;
+//         } else {
+//             console.log('Недопустимое значение');
+//         }
+//     }
+// }
+
+// const ivan = new User('Ivan', 27);
+
+// console.log(ivan.age);
+// ivan.age = 99;      //Меняем через сеттер, без него это свойство будет недоступно
+// console.log(ivan.age);
+// ivan.say();
