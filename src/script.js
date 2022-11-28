@@ -869,3 +869,44 @@ inputRub.addEventListener('input', () => {
 
 
 
+// ********************* Функции генераторы
+//Результат выдается последовательно
+// То есть каждый новый вызов функции будет давать новый результат
+
+
+// function* generator() {
+//     yield 'S';
+//     yield 'c';
+//     yield 'r';
+//     yield 'i';
+//     yield 'p';
+//     yield 't';
+// }  
+
+// const str = generator();
+// console.log(str.next()); 
+// console.log(str.next()); 
+// console.log(str.next().value);
+// console.log(str.next()); 
+// console.log(str.next());
+// console.log(str.next()); 
+// console.log(str.next()); 
+
+
+function* count(n) {
+    for(let i = 0; i <= n; i++) {
+        yield i;
+    }
+}
+
+// const counter = count(7);
+
+// console.log(counter.next());
+// console.log(counter.next());
+// console.log(counter.next());
+
+
+for(let k of count(8)) {
+    console.log(k);
+}
+
