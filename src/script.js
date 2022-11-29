@@ -918,17 +918,17 @@ inputRub.addEventListener('input', () => {
 // ************* Event loop
 // Сначала все асинхронные операции попадают в веб апи потоп в очередь и потом в стек вызова
 
-console.log(1);
+// console.log(1);
 
-setTimeout(() => {
-    console.log('timeout');
-}, 2000);
+// setTimeout(() => {
+//     console.log('timeout');
+// }, 2000);
 
-setTimeout(() => {
-    console.log('timeout');
-}, 4000);
+// setTimeout(() => {
+//     console.log('timeout');
+// }, 4000);
 
-console.log(2);
+// console.log(2);
 
 
 
@@ -936,4 +936,79 @@ console.log(2);
 // ************* Макро и микро задачи
 // После выполенения макрозадачи (почти все действия) выполнются все микрозадача
 // К микрозадачам относятся then catch finally
+
+// function addX(x) {
+//     return function(n) {
+//        return n + x
+//     }
+//   }
+   
+//   const addThree = addX(3);
+   
+//   let d = addThree(c);
+//   let res = addThree(c);
+   
+//   console.log(res)
+
+
+
+// Место для первой задачи
+// function firstTask() {
+//     // Значения массива менять нельзя, тут он проверяется автоматически именно на эти значения
+//     const arr = [3, 5, 8, 16, 20, 23, 50];
+//     const result = [];
+
+//     arr.forEach(elem => {
+//         result.push(elem);
+//     });
+
+//     // Пишем решение вот тут
+    
+    
+//     // Не трогаем
+//     return result;
+// }
+
+// console.log(firstTask())
+
+
+// // Место для второй задачи
+// function secondTask() {
+//     // Значения массива менять нельзя, тут он проверяется автоматически именно на эти значения
+//     const data = [5, 10, 'Shopping', 20, 'Homework'];
+//     // Пишем решение вот тут
+//     const newArr = data.map(elem => {
+//         if(typeof(elem) === 'number') {
+//            return elem * 2;
+//         }
+
+//         return elem + ' - done';
+//     });
+    
+    
+//     // Не трогаем
+//     return newArr;
+// }
+
+// console.log(secondTask() )
+
+
+
+// // Место для третьей задачи
+// function thirdTask() {
+//     // Значения массива менять нельзя, тут он проверяется автоматически именно на эти значения
+//     const data = [5, 10, 'Shopping', 20, 'Homework'];
+//     const result = [];
+
+//     // Пишем решение вот тут
+//     for(let i = (data.length - 1); i >= 0; i--) {
+//         result.push(data[i]);
+//     }
+    
+//     // Не трогаем
+//     return result;
+// }
+
+// console.log(thirdTask())
+
 
