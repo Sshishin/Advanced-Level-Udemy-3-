@@ -1012,3 +1012,35 @@ inputRub.addEventListener('input', () => {
 // console.log(thirdTask())
 
 
+
+
+function sayHello(name) {
+    return `Привет,${name}!`; 
+}
+
+function returnNeighboringNumbers(n) {
+    return [(n - 1), n , n + 1];
+}
+
+function getMathResult(base, multi) {
+    let sum = 0;
+    let finalStr = '';
+
+if(base === 0 || base < 0 || typeof(base) !== 'number') {
+    return base;
+}
+
+for(let i = 0; i < multi; i++) {
+    sum += base;
+
+    if(i < 1) {
+        finalStr += sum;
+    } else {
+        finalStr += '---' + sum;
+    }
+}
+
+    return finalStr;
+}
+
+console.log(getMathResult(3, 10));
