@@ -893,20 +893,38 @@ inputRub.addEventListener('input', () => {
 // console.log(str.next()); 
 
 
-function* count(n) {
-    for(let i = 0; i <= n; i++) {
-        yield i;
-    }
-}
+// function* count(n) {
+//     for(let i = 0; i <= n; i++) {
+//         yield i;
+//     }
+// }
 
-// const counter = count(7);
+// // const counter = count(7);
 
-// console.log(counter.next());
-// console.log(counter.next());
-// console.log(counter.next());
+// // console.log(counter.next());
+// // console.log(counter.next());
+// // console.log(counter.next());
 
 
-for(let k of count(8)) {
-    console.log(k);
-}
+// for(let k of count(8)) {
+//     console.log(k);
+// }
 
+
+
+
+
+
+// ************* Event loop
+
+console.log(1);
+
+setTimeout(() => {
+    console.log('timeout');
+}, 2000);
+
+setTimeout(() => {
+    console.log('timeout');
+}, 4000);
+
+console.log(2);
