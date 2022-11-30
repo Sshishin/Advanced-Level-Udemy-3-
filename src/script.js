@@ -1014,33 +1014,77 @@ inputRub.addEventListener('input', () => {
 
 
 
-function sayHello(name) {
-    return `Привет,${name}!`; 
-}
+// function sayHello(name) {
+//     return `Привет,${name}!`; 
+// }
 
-function returnNeighboringNumbers(n) {
-    return [(n - 1), n , n + 1];
-}
+// function returnNeighboringNumbers(n) {
+//     return [(n - 1), n , n + 1];
+// }
 
-function getMathResult(base, multi) {
-    let sum = 0;
-    let finalStr = '';
+// function getMathResult(base, multi) {
+//     let sum = 0;
+//     let finalStr = '';
 
-if(base === 0 || base < 0 || typeof(base) !== 'number') {
-    return base;
-}
+// if(base === 0 || base < 0 || typeof(base) !== 'number') {
+//     return base;
+// }
 
-for(let i = 0; i < multi; i++) {
-    sum += base;
+// for(let i = 0; i < multi; i++) {
+//     sum += base;
 
-    if(i < 1) {
-        finalStr += sum;
+//     if(i < 1) {
+//         finalStr += sum;
+//     } else {
+//         finalStr += '---' + sum;
+//     }
+// }
+
+//     return finalStr;
+// }
+
+// console.log(getMathResult(3, 10));
+
+
+
+function getTimeFromMinutes(hour) {
+    let result = [];
+
+    
+
+    if(hour < 60 && hour > 0) {
+        result.push(0);
+        result.push(Math.floor(hour) % 60);
+    } else if(hour < 0) {
+        return 'Ошибка, проверьте данные';
     } else {
-        finalStr += '---' + sum;
+        result.push(Math.floor(hour / 60));
+        result.push(Math.floor(hour) % 60);
+    }
+
+    if(result[0] > 0 && result[0] != 1) {
+        return `Это ${result[0]} часа и ${result[1]} минут`;
+    } else if(result[0] === 1) {
+        return `Это ${result[0]} час и ${result[1]} минут`;
+    } else {
+        return `Это ${result[0]} часов и ${result[1]} минут`; 
     }
 }
 
-    return finalStr;
+console.log(getTimeFromMinutes(50.1));
+
+
+function findMaxNumber(arr1, arr2, arr3, arr4) {
+    const array = [];
+    array.push(arr1);
+    array.push(arr2);
+    array.push(arr3);
+    array.push(arr4);
+
+    const total = array.sort(function(a, b) {
+        return b - a;
+    });
+    return total[0];
 }
 
-console.log(getMathResult(3, 10));
+console.log(findMaxNumber('10', 1, 5, 3)); 
