@@ -1047,44 +1047,126 @@ inputRub.addEventListener('input', () => {
 
 
 
-function getTimeFromMinutes(hour) {
-    let result = [];
+// function getTimeFromMinutes(hour) {
+//     let result = [];
 
     
 
-    if(hour < 60 && hour > 0) {
-        result.push(0);
-        result.push(Math.floor(hour) % 60);
-    } else if(hour < 0) {
-        return 'Ошибка, проверьте данные';
-    } else {
-        result.push(Math.floor(hour / 60));
-        result.push(Math.floor(hour) % 60);
+//     if(hour < 60 && hour > 0) {
+//         result.push(0);
+//         result.push(Math.floor(hour) % 60);
+//     } else if(hour < 0) {
+//         return 'Ошибка, проверьте данные';
+//     } else {
+//         result.push(Math.floor(hour / 60));
+//         result.push(Math.floor(hour) % 60);
+//     }
+
+//     if(result[0] > 0 && result[0] != 1) {
+//         return `Это ${result[0]} часа и ${result[1]} минут`;
+//     } else if(result[0] === 1) {
+//         return `Это ${result[0]} час и ${result[1]} минут`;
+//     } else {
+//         return `Это ${result[0]} часов и ${result[1]} минут`; 
+//     }
+// }
+
+// console.log(getTimeFromMinutes(50.1));
+
+
+// function findMaxNumber(arr1, arr2, arr3, arr4) {
+//     const array = [];
+//     array.push(arr1);
+//     array.push(arr2);
+//     array.push(arr3);
+//     array.push(arr4);
+
+//     const total = array.sort(function(a, b) {
+//         return b - a;
+//     });
+//     return total[0];
+// }
+
+// console.log(findMaxNumber('10', 1, 5, 3)); 
+
+
+// const array = ['fd', 'tyu', 'hfaqr', 'fd1', 'tyu2', 'hfaqr3','fd4', 'tyu5', 'hfaqr6', 'hfaqr67', 'hfaqr674', 'hfaqr676'];
+
+// const arr = [];
+
+// // array.forEach(elem => {
+// //     arr.push([elem]);
+// // });
+// let count = 0;
+// for(let i = 0; i < 3; i++) {
+//     arr.push([]);
+//     for(let k = count; k < 3; k++) {
+//         // arr.push([array[i]]);
+//         arr[i].push(array[k]);
+//         count++;
+//     } 
+// }
+//     if(array.length < 10) {
+//         arr.push('Оставшиеся студенты: -');
+//     }
+    
+//     if(array.length > 9) {
+//     let str = 'Оставшиеся студенты: ';
+
+//         for(let j = 9; j < array.length; j++) {
+//             if(array.slice(-1) == array[j]) {
+//             str += array[j];
+//             console.log(100);
+//             } else {
+//                 str += array[j] +', ';
+//             }
+           
+           
+//     }
+//     arr.push(str);
+    
+// }
+
+// console.log(arr);
+
+const students = ['Peter', 'Andrew', 'Ann', 'Mark', 'Josh', 'Sandra', 'Cris', 'Bernard', 'Takesi'];
+
+function sortStudentsByGroups(arr) {
+    const newArr = arr.sort();
+    const mainArr = [];
+
+    for(let i = 0; i < 3; i++) {
+        mainArr.push([]);
     }
 
-    if(result[0] > 0 && result[0] != 1) {
-        return `Это ${result[0]} часа и ${result[1]} минут`;
-    } else if(result[0] === 1) {
-        return `Это ${result[0]} час и ${result[1]} минут`;
-    } else {
-        return `Это ${result[0]} часов и ${result[1]} минут`; 
-    }
-}
-
-console.log(getTimeFromMinutes(50.1));
-
-
-function findMaxNumber(arr1, arr2, arr3, arr4) {
-    const array = [];
-    array.push(arr1);
-    array.push(arr2);
-    array.push(arr3);
-    array.push(arr4);
-
-    const total = array.sort(function(a, b) {
-        return b - a;
+    newArr.forEach((elem, ind) => {
+        if(ind <= 2) {
+            mainArr[0].push(elem);
+        } else if(ind <= 5) {
+            mainArr[1].push(elem);
+        } else if(ind <= 8) {
+            mainArr[2].push(elem); 
+        }
     });
-    return total[0];
-}
 
-console.log(findMaxNumber('10', 1, 5, 3)); 
+    if(arr.length < 10) {
+        mainArr.push('Оставшиеся студенты: -');
+        return mainArr;
+    }
+                
+    if(arr.length > 9) {
+        let str = 'Оставшиеся студенты: ';
+            
+        for(let j = 9; j < arr.length; j++) {
+            if(arr.slice(-1) == arr[j]) {
+                str += arr[j];
+            } else {
+                str += arr[j] +', ';
+            }
+        }
+    
+    mainArr.push(str);
+    return mainArr;
+   }
+}
+console.log(sortStudentsByGroups(students))
