@@ -1170,3 +1170,24 @@ inputRub.addEventListener('input', () => {
 // }
 
 // console.log(fib(7.3));
+
+function factorial(n) {
+    let arr = [];
+    if(n < 1) {
+        return 1;
+    }
+
+    if(n % 1 !== 0 && n % 2 !== 0 || typeof(n) !== 'number') {
+        return '';
+    }
+
+    arr.push(n);
+    for(let i = 1; i < n; i++) {
+        arr.push(n - (i));
+    }
+    const res = arr.reduce((acc, num) => {
+        return acc * num;
+    });
+return res;
+}
+console.log(factorial(4))
