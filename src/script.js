@@ -1090,83 +1090,83 @@ inputRub.addEventListener('input', () => {
 // console.log(findMaxNumber('10', 1, 5, 3)); 
 
 
-// const array = ['fd', 'tyu', 'hfaqr', 'fd1', 'tyu2', 'hfaqr3','fd4', 'tyu5', 'hfaqr6', 'hfaqr67', 'hfaqr674', 'hfaqr676'];
 
-// const arr = [];
+// const students = ['Peter', 'Andrew', 'Ann', 'Mark', 'Josh', 'Sandra', 'Cris', 'Bernard', 'Takesi'];
 
-// // array.forEach(elem => {
-// //     arr.push([elem]);
-// // });
-// let count = 0;
-// for(let i = 0; i < 3; i++) {
-//     arr.push([]);
-//     for(let k = count; k < 3; k++) {
-//         // arr.push([array[i]]);
-//         arr[i].push(array[k]);
-//         count++;
-//     } 
-// }
-//     if(array.length < 10) {
-//         arr.push('Оставшиеся студенты: -');
+// function sortStudentsByGroups(arr) {
+//     const newArr = arr.sort();
+//     const mainArr = [];
+
+//     for(let i = 0; i < 3; i++) {
+//         mainArr.push([]);
 //     }
-    
-//     if(array.length > 9) {
-//     let str = 'Оставшиеся студенты: ';
 
-//         for(let j = 9; j < array.length; j++) {
-//             if(array.slice(-1) == array[j]) {
-//             str += array[j];
-//             console.log(100);
-//             } else {
-//                 str += array[j] +', ';
-//             }
-           
-           
+//     newArr.forEach((elem, ind) => {
+//         if(ind <= 2) {
+//             mainArr[0].push(elem);
+//         } else if(ind <= 5) {
+//             mainArr[1].push(elem);
+//         } else if(ind <= 8) {
+//             mainArr[2].push(elem); 
+//         }
+//     });
+
+//     if(arr.length < 10) {
+//         mainArr.push('Оставшиеся студенты: -');
+//         return mainArr;
 //     }
-//     arr.push(str);
-    
-// }
-
-// console.log(arr);
-
-const students = ['Peter', 'Andrew', 'Ann', 'Mark', 'Josh', 'Sandra', 'Cris', 'Bernard', 'Takesi'];
-
-function sortStudentsByGroups(arr) {
-    const newArr = arr.sort();
-    const mainArr = [];
-
-    for(let i = 0; i < 3; i++) {
-        mainArr.push([]);
-    }
-
-    newArr.forEach((elem, ind) => {
-        if(ind <= 2) {
-            mainArr[0].push(elem);
-        } else if(ind <= 5) {
-            mainArr[1].push(elem);
-        } else if(ind <= 8) {
-            mainArr[2].push(elem); 
-        }
-    });
-
-    if(arr.length < 10) {
-        mainArr.push('Оставшиеся студенты: -');
-        return mainArr;
-    }
                 
-    if(arr.length > 9) {
-        let str = 'Оставшиеся студенты: ';
+//     if(arr.length > 9) {
+//         let str = 'Оставшиеся студенты: ';
             
-        for(let j = 9; j < arr.length; j++) {
-            if(arr.slice(-1) == arr[j]) {
-                str += arr[j];
-            } else {
-                str += arr[j] +', ';
-            }
-        }
+//         for(let j = 9; j < arr.length; j++) {
+//             if(arr.slice(-1) == arr[j]) {
+//                 str += arr[j];
+//             } else {
+//                 str += arr[j] +', ';
+//             }
+//         }
     
-    mainArr.push(str);
-    return mainArr;
-   }
-}
-console.log(sortStudentsByGroups(students))
+//     mainArr.push(str);
+//     return mainArr;
+//    }
+// }
+// console.log(sortStudentsByGroups(students))
+
+
+
+// Еще один вариант решения задачи основанный на изменении самого массива
+// const students = ['Peter', 'Andrew', 'Ann', 'Mark', 'Josh', 'Sandra', 'Cris', 'Bernard', 'Takesi'];
+
+// console.log(students.splice(0,3));   //Удалили элементы
+// console.log(students);   //Следующие элементы встали на место прошлых
+
+
+
+// function fib(num) {
+//     let str = '';
+//     const arr = [0, 1];
+
+//     if(num % 1 !== 0 && num % 2 !== 0) {
+//         return '';
+//     }
+
+//     if(num === 1) {
+//         return '0';
+//     }
+
+//     if(typeof(num) !== 'number' || num === 0) {
+//         return '';
+//     }
+
+//     for(let i = 0; i < (num - 2); i++) {
+//        arr.push((arr[i] + arr[i + 1]));
+//     }
+
+//     arr.forEach((elem, ind) => {
+//         ind === (arr.length - 1) ? str += elem : str += (elem + ' ');
+//     });
+//     return str;
+// }
+
+// console.log(fib(7.3));
