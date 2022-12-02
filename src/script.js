@@ -1141,7 +1141,7 @@ inputRub.addEventListener('input', () => {
 // console.log(students.splice(0,3));   //Удалили элементы
 // console.log(students);   //Следующие элементы встали на место прошлых
 
-
+// Итеративное решение фиббоначи
 
 // function fib(num) {
 //     let str = '';
@@ -1171,23 +1171,40 @@ inputRub.addEventListener('input', () => {
 
 // console.log(fib(7.3));
 
+
+// Решение факториала
+
+// function factorial(n) {
+//     let arr = [];
+//     if(n < 1) {
+//         return 1;
+//     }
+
+//     if(n % 1 !== 0 && n % 2 !== 0 || typeof(n) !== 'number') {
+//         return '';
+//     }
+
+//     arr.push(n);
+//     for(let i = 1; i < n; i++) {
+//         arr.push(n - (i));
+//     }
+//     const res = arr.reduce((acc, num) => {
+//         return acc * num;
+//     });
+// return res;
+// }
+// console.log(factorial(4))
+
+
+
+// Recursion solution for factorial
+
 function factorial(n) {
-    let arr = [];
-    if(n < 1) {
+    if(n <= 1) {
         return 1;
     }
 
-    if(n % 1 !== 0 && n % 2 !== 0 || typeof(n) !== 'number') {
-        return '';
-    }
-
-    arr.push(n);
-    for(let i = 1; i < n; i++) {
-        arr.push(n - (i));
-    }
-    const res = arr.reduce((acc, num) => {
-        return acc * num;
-    });
-return res;
+    return n * factorial(n - 1);
 }
-console.log(factorial(4))
+
+console.log(factorial(5));
