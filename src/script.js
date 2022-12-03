@@ -1231,18 +1231,61 @@ inputRub.addEventListener('input', () => {
 //   console.log( fib(3) ); // 2
  
 
-let out = 0;
-let i = 5;
+// let out = 0;
+// let i = 5;
 
-function testRecursion() {
-    out += i;
+// function testRecursion() {
+//     out += i;
 
-    if(out >= 25) {
-        return out;
+//     if(out >= 25) {
+//         return out;
+//     }
+
+//     testRecursion();
+// }
+
+// testRecursion()
+// console.log(out);
+
+
+// Перебор объектов с помощью рекурсии
+
+
+const personal = {
+   "kostya" : {
+    age : 54,
+    parent : {
+        "kostyaP" : {
+            age : 30
+        },
+        "kostyaM" : {
+            age : 23
+        },
+        "kostyaU" : {
+            age : 22,
+            parent : {
+                "kostyaSenior" : {
+                    age: 34,
+                    parent : {
+                        "kostyaOldest" : {
+                            age: 90
+                        }
+                    }
+                }
+            }
+        }   
+    
     }
+   }
+};
 
-    testRecursion();
+function getParent(obj) {
+    if(obj.parent != undefined) {
+        for(let k in obj.parent) {
+            console.log(k);
+            getParent(obj.parent[k]);   //Сразу прописываем путь к последнему перебираемому объекту
+        }
+    }
 }
 
-testRecursion()
-console.log(out);
+getParent(personal.kostya);
