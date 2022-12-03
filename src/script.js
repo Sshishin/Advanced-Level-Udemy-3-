@@ -1199,12 +1199,50 @@ inputRub.addEventListener('input', () => {
 
 // Recursion solution for factorial
 
-function factorial(n) {
-    if(n <= 1) {
-        return 1;
+// function factorial(n) {
+//     if(n <= 1) {
+//         return 1;
+//     }
+
+//     return n * factorial(n - 1);
+// }
+
+// console.log(factorial(5));
+
+
+// function fib (n) {
+//     if(n <= 1) {
+//         return n;
+//     } else {
+//         return fib(n - 1) + fib(n - 2);
+//     }
+
+    
+
+    
+// }
+
+// console.log(fib(5));
+
+// function fib(n) {
+//     return n <= 1 ? n : fib(n - 1) + fib(n - 2);
+//   }
+  
+//   console.log( fib(3) ); // 2
+ 
+
+let out = 0;
+let i = 5;
+
+function testRecursion() {
+    out += i;
+
+    if(out >= 25) {
+        return out;
     }
 
-    return n * factorial(n - 1);
+    testRecursion();
 }
 
-console.log(factorial(5));
+testRecursion()
+console.log(out);
