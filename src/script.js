@@ -1251,41 +1251,67 @@ inputRub.addEventListener('input', () => {
 // Перебор объектов с помощью рекурсии
 
 
-const personal = {
-   "kostya" : {
-    age : 54,
-    parent : {
-        "kostyaP" : {
-            age : 30
-        },
-        "kostyaM" : {
-            age : 23
-        },
-        "kostyaU" : {
-            age : 22,
-            parent : {
-                "kostyaSenior" : {
-                    age: 34,
-                    parent : {
-                        "kostyaOldest" : {
-                            age: 90
-                        }
-                    }
-                }
-            }
-        }   
+// const personal = {
+//    "kostya" : {
+//     age : 54,
+//     parent : {
+//         "kostyaP" : {
+//             age : 30
+//         },
+//         "kostyaM" : {
+//             age : 23
+//         },
+//         "kostyaU" : {
+//             age : 22,
+//             parent : {
+//                 "kostyaSenior" : {
+//                     age: 34,
+//                     parent : {
+//                         "kostyaOldest" : {
+//                             age: 90
+//                         }
+//                     }
+//                 }
+//             }
+//         }   
     
-    }
-   }
-};
+//     }
+//    }
+// };
 
-function getParent(obj) {
-    if(obj.parent != undefined) {
-        for(let k in obj.parent) {
-            console.log(k);
-            getParent(obj.parent[k]);   //Сразу прописываем путь к последнему перебираемому объекту
-        }
-    }
-}
+// function getParent(obj) {
+//     if(obj.parent != undefined) {
+//         for(let k in obj.parent) {
+//             console.log(k);
+//             getParent(obj.parent[k]);   //Сразу прописываем путь к последнему перебираемому объекту
+//         }
+//     }
+// }
 
-getParent(personal.kostya);
+// getParent(personal.kostya);
+
+
+
+
+// Не решенная задача
+
+// создайте функцию которая рекурсивно перечисляет все ключи от объекта используя запись через точку.
+
+// const obj = {
+//     a: {
+//         b: 2,
+//         c: 4,
+//     }
+// }
+
+// // вернется: ['a.b', 'a.c']
+
+// const obj2 = {
+//     a: {
+//         b: 2,
+//         q: [0, 3, 4],
+//     },
+//     x: true,
+//     d: {f: null}
+// }
+// вернется: ['a.b', 'a.q.0', 'a.q.1', 'a.q.2', 'x', 'd.f]
