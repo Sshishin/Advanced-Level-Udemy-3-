@@ -1319,6 +1319,10 @@ inputRub.addEventListener('input', () => {
 
 
 
+// **************** Композиция функций
+
+
+
 // Пример композиции функции (функциональное программирование)
 
 // const a = x => x + 2;
@@ -1365,3 +1369,51 @@ inputRub.addEventListener('input', () => {
 // );
 
 // console.log(withСompose(200));
+
+// Для одного аргумента и для любого количества аргументов
+// const compose = (...fns) => (x) => fns.reduceRight((res, fn) => fn(res), x);
+
+// const composeWithArgs = (...fns) => fns.reduceRight((f, g) => (...args) => g(f(...args)));
+
+
+
+// **************** Web API Animations
+
+const anim = images[0].animate([
+    {transform: 'translateY(0) rotate(180deg)',
+    filter: 'opacity(100%)'
+    },
+    {transform: 'translateY(100)'},
+    {transform: 'translateY(-100)'},
+    {transform: 'translateY(0)'},
+],
+{
+    duration: 3000,
+    iterations: Infinity
+});
+
+buttons.forEach(item => {
+    item.addEventListener('click', (e) => {
+        if(!anim) {     //Если нет еще такой анимации то создаем
+            const anim = elem.animate([
+                {transform: 'translateY(0) rotate(180deg)',
+                filter: 'opacity(100%)'
+                },
+                {transform: 'translateY(100)'},
+                {transform: 'translateY(-100)'},
+                {transform: 'translateY(0)'},
+            ],
+            {
+                duration: 3000,
+                iterations: Infinity
+            });
+        } else if(anim.playState === 'paused') {    //Если анимация на паузе то запускаем по клику
+            anim.play();
+        } else {    //Если анимация не на паузе, то ставим на паузу
+            anim.paused();
+        }
+        
+    });
+
+
+})
