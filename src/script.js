@@ -1315,3 +1315,53 @@ inputRub.addEventListener('input', () => {
 //     d: {f: null}
 // }
 // вернется: ['a.b', 'a.q.0', 'a.q.1', 'a.q.2', 'x', 'd.f]
+
+
+
+
+// Пример композиции функции (функциональное программирование)
+
+// const a = x => x + 2;
+// const b = x => x * 3;
+
+// console.log(a(b(5))); // 17
+
+
+
+// const upperCase = str => str.toUpperCase();
+// const exclaim = str => `${str}!`;
+// const repeat = str => `${str} `.repeat(3);
+
+// console.log(
+//   repeat(exclaim(upperCase("I love coding"))) // I LOVE CODING! I LOVE CODING! I LOVE CODING!
+// );
+
+// const upperCase = str => str.toUpperCase();
+// const exclaim = str => `${str}!`;
+// const repeat = str => `${str} `.repeat(3);
+
+// const compose = (...fns) => x => fns.reduceRight((acc, fn) => fn(acc), x);      //Начальным значение является аргумент переданный при вызове withCompse(x), дальше вызывается каждая функция которая делает коллбэк в acc, который затем вызывается уже для другой функции
+//Каждая часть выражения возвращает коллбэк назад и получается что аргумент для каждой функции является динамическим и при вызове конечной функции мы получаем итоговое значение которое дошло до сюда после последовательной обработки через несколько функций 
+
+// const withСompose = compose(
+//   repeat,
+//   exclaim,
+//   upperCase
+// );
+
+// console.log(withСompose("I love coding")); // I LOVE CODING! I LOVE CODING! I LOVE CODING!
+
+
+// const multiply20 = (price) => price * 20;
+// const divide100 = (price) => price / 100;
+// const normalizePrice = (price) => price.toFixed(2);
+
+// const compose = (...fns) => x => fns.reduceRight((acc, fn) => fn(acc),x);
+
+// const withСompose = compose(
+//   multiply20,
+//   divide100,
+//   normalizePrice
+// );
+
+// console.log(withСompose(200));
