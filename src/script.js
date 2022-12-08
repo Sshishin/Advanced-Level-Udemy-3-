@@ -1379,41 +1379,47 @@ inputRub.addEventListener('input', () => {
 
 // **************** Web API Animations
 
-const anim = images[0].animate([
-    {transform: 'translateY(0) rotate(180deg)',
-    filter: 'opacity(100%)'
-    },
-    {transform: 'translateY(100)'},
-    {transform: 'translateY(-100)'},
-    {transform: 'translateY(0)'},
-],
-{
-    duration: 3000,
-    iterations: Infinity
-});
+// const anim = images[0].animate([
+//     {transform: 'translateY(0) rotate(180deg)',
+//     filter: 'opacity(100%)'
+//     },
+//     {transform: 'translateY(100)'},
+//     {transform: 'translateY(-100)'},
+//     {transform: 'translateY(0)'},
+// ],
+// {
+//     duration: 3000,
+//     iterations: Infinity
+// });
 
-buttons.forEach(item => {
-    item.addEventListener('click', (e) => {
-        if(!anim) {     //Если нет еще такой анимации то создаем
-            const anim = elem.animate([
-                {transform: 'translateY(0) rotate(180deg)',
-                filter: 'opacity(100%)'
-                },
-                {transform: 'translateY(100)'},
-                {transform: 'translateY(-100)'},
-                {transform: 'translateY(0)'},
-            ],
-            {
-                duration: 3000,
-                iterations: Infinity
-            });
-        } else if(anim.playState === 'paused') {    //Если анимация на паузе то запускаем по клику
-            anim.play();
-        } else {    //Если анимация не на паузе, то ставим на паузу
-            anim.paused();
-        }
+// buttons.forEach(item => {
+//     item.addEventListener('click', (e) => {
+//         if(!anim) {     //Если нет еще такой анимации то создаем
+//             const anim = elem.animate([
+//                 {transform: 'translateY(0) rotate(180deg)',
+//                 filter: 'opacity(100%)'
+//                 },
+//                 {transform: 'translateY(100)'},
+//                 {transform: 'translateY(-100)'},
+//                 {transform: 'translateY(0)'},
+//             ],
+//             {
+//                 duration: 3000,
+//                 iterations: Infinity
+//             });
+//         } else if(anim.playState === 'paused') {    //Если анимация на паузе то запускаем по клику
+//             anim.play();
+//         } else {    //Если анимация не на паузе, то ставим на паузу
+//             anim.paused();
+//         }
         
-    });
+//     });
 
 
-})
+// })
+
+
+
+
+// ******************* Symbol
+// Нужен для создания скрытым значений объекта недоступных из вне и скрытых при переборе объекта
