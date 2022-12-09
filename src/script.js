@@ -1474,3 +1474,24 @@ inputRub.addEventListener('input', () => {
 // for(let [shop, price] of map.entries()) {   //Деструктуризация где получаем и ключ и значение сразу и этот метод заменяет сразу 2 это map.value и map.keys
 //     console.log(shop, price)
 // }
+
+
+
+
+// *************** Set - это массив где каждое значение встречается только один раз
+// Работает быстрее чем массив
+
+// const arr = [1, 1, 1, 1, 2, 3, 2, 3, 4];
+
+// const setArr = new Set(arr);    //Получаем только уникальные значения в виде коллекции
+
+// console.log(setArr);
+
+// for (let key of setArr) {
+//     console.log(key)
+// }
+
+// function uniqueArr(arr) {   //Функция быстрый фильтр уникальных значений массва
+//     return Array.from(new Set(arr));  //Получаем массив из  
+// }
+
