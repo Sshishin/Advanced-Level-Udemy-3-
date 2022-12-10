@@ -1503,5 +1503,52 @@ inputRub.addEventListener('input', () => {
 // Нельзя округлять
 // Нельзя работать вместе с обычными цифрами кроме операторов сравнения и будут равны тольо при не строгом сравнении
 
-const number = 12312424241241242141212412412n;
-Number(number);     //Трансформация в bigint, но то что не подходит под ограничения обычных чисел в js просто отрежется
+// const number = 12312424241241242141212412412n;
+// Number(number);     //Трансформация в bigint, но то что не подходит под ограничения обычных чисел в js просто отрежется
+
+
+
+
+
+
+// Task #19 (Hard)
+
+const arr = [1, 2, [3, 4, [5]]];
+// const arr1 = []
+// const newArr = [];
+// let counter = 0;
+
+function deepCount(a){
+    const newArr = [];
+let counter = 0;
+
+function yar() {
+    a.forEach((item,i) => {
+        if(!Array.isArray(item)) {
+            newArr.push(item);
+        }
+        
+        // console.log(item,i)
+        if(Array.isArray(item,i)) {
+            console.log(item,i)
+            counter++;
+          deepCount(a[i]);
+        }
+    });
+    const total = newArr.length + counter;
+    return total
+}
+return yar()
+    
+}
+
+console.log(deepCount(arr));
+
+// console.log(newArr.length);
+// console.log(counter)
+
+// const total = newArr.length + counter;
+
+// console.log(total);
+
+
