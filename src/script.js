@@ -1547,8 +1547,9 @@ inputRub.addEventListener('input', () => {
 // function isPangram(string) {
 
 // let filtredStr = '';
-// const findWords = string.toLowerCase().match(/[A-Z]/ig);
+// const findWords = string.toLowerCase().match(/[A-Z]/ig); 
 // const uniqArr = new Set(findWords);
+// console.log(uniqArr)
 
 // for(let key of uniqArr) {
 //     filtredStr += key;
@@ -1561,4 +1562,25 @@ inputRub.addEventListener('input', () => {
 
 
 
+
+function amountOfPages(summary){
+    let str = '';
+    let arr = [];
+    
+    for(let i = 1; str.length < summary; i++ ) {
+        str += i;   //Прописываем для создания ограничение, чтобы системы понимала до какого критерия нам нужны числа
+        arr.push(i);
+    }
+    return arr.slice(-1)[0];
+}
+
+console.log(amountOfPages(25));
+
+
+
+// РАЗОБРАТЬСЯ КАК РАБОТАЕТ
+
+// function isPangram(string){
+//     return (string.match(/([a-z])(?!.*\1)/ig) || []).length === 26;
+// }
 
