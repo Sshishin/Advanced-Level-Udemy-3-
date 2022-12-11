@@ -1513,42 +1513,52 @@ inputRub.addEventListener('input', () => {
 
 // Task #19 (Hard)
 
-const arr = [1, 2, [3, 4, [5]]];
-// const arr1 = []
-// const newArr = [];
-// let counter = 0;
+// const arr = [1, 2, [3, 4, [5]]];
 
-function deepCount(a){
-    const newArr = [];
-let counter = 0;
+// function deepCount(){
+//     const newArr = [];
+//     let counter = 0;
 
-function yar() {
-    a.forEach((item,i) => {
-        if(!Array.isArray(item)) {
-            newArr.push(item);
-        }
-        
-        // console.log(item,i)
-        if(Array.isArray(item,i)) {
-            console.log(item,i)
-            counter++;
-          deepCount(a[i]);
-        }
-    });
-    const total = newArr.length + counter;
-    return total
-}
-return yar()
-    
-}
+// function yar(a) {
+//     a.forEach((item,i) => {
+//         if(!Array.isArray(item)) {
+//             newArr.push(item);
+//         }
+//         if(Array.isArray(item,i)) {
+//             counter++;
+//           yar(a[i]);
+//         }
+//     });
+//     const total = newArr.length + counter;
+//     return total;
+// }
+// return yar(arr);
+// }
 
-console.log(deepCount(arr));
+// console.log(deepCount());
 
-// console.log(newArr.length);
-// console.log(counter)
 
-// const total = newArr.length + counter;
+// Task #18 (Hard)
 
-// console.log(total);
+
+
+// const arr = 'The quick brown fox jumps over the lazy dog';
+
+// function isPangram(string) {
+
+// let filtredStr = '';
+// const findWords = string.toLowerCase().match(/[A-Z]/ig);
+// const uniqArr = new Set(findWords);
+
+// for(let key of uniqArr) {
+//     filtredStr += key;
+// }
+// const result = filtredStr.length === 26 ? true : false;
+
+// return result;
+// }
+// console.log(isPangram(arr));
+
+
 
 
