@@ -1563,18 +1563,18 @@ inputRub.addEventListener('input', () => {
 
 
 
-function amountOfPages(summary){
-    let str = '';
-    let arr = [];
+// function amountOfPages(summary){
+//     let str = '';
+//     let arr = [];
     
-    for(let i = 1; str.length < summary; i++ ) {
-        str += i;   //Прописываем для создания ограничение, чтобы системы понимала до какого критерия нам нужны числа
-        arr.push(i);
-    }
-    return arr.slice(-1)[0];
-}
+//     for(let i = 1; str.length < summary; i++ ) {
+//         str += i;   //Прописываем для создания ограничение, чтобы системы понимала до какого критерия нам нужны числа
+//         arr.push(i);
+//     }
+//     return arr.slice(-1)[0];
+// }
 
-console.log(amountOfPages(25));
+// console.log(amountOfPages(25));
 
 
 
@@ -1584,3 +1584,7 @@ console.log(amountOfPages(25));
 //     return (string.match(/([a-z])(?!.*\1)/ig) || []).length === 26;
 // }
 
+
+
+
+// ************** WeakMap - позволяет убирать утечки памяти за счет того что он в себе не содержит объекты доступ котором есть только через сам map
